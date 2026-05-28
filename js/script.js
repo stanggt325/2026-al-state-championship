@@ -173,6 +173,17 @@ document.querySelectorAll(
   populateGrid(silverSponsors, 'silver-sponsors-grid', '');
 })();
 
+/* ─── SQUAD MATRIX TABS ─── */
+document.querySelectorAll('.squad-tab').forEach(tab => {
+  tab.addEventListener('click', () => {
+    document.querySelectorAll('.squad-tab').forEach(t => t.classList.remove('active'));
+    document.querySelectorAll('.squad-panel').forEach(p => p.classList.remove('active'));
+    tab.classList.add('active');
+    const panel = document.getElementById('squad-' + tab.dataset.day);
+    if (panel) panel.classList.add('active');
+  });
+});
+
 /* ─── ACTIVE NAV LINK ON SCROLL ─── */
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');

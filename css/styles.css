@@ -67,7 +67,7 @@ body {
   flex-shrink: 0;
 }
 .nav-match-logo {
-  height: 36px;
+  height: 64px;
   width: auto;
   object-fit: contain;
   border-radius: 4px;
@@ -492,6 +492,33 @@ body {
   margin-top: .15rem;
 }
 
+/* ─── WELCOME SIGNATURE ─── */
+.welcome-signature {
+  margin-top: 2rem;
+}
+.sig-rule {
+  width: 56px;
+  height: 2px;
+  background: var(--gold);
+  border-radius: 1px;
+  margin-bottom: .75rem;
+}
+.sig-name {
+  display: block;
+  font-family: 'Oswald', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: .08em;
+  color: var(--gold);
+}
+.sig-title {
+  display: block;
+  font-size: .78rem;
+  color: var(--text-muted);
+  letter-spacing: .06em;
+  margin-top: .2rem;
+}
+
 /* ─── BRIEFING ─── */
 .briefing-grid {
   display: grid;
@@ -713,6 +740,122 @@ address { font-style: normal; }
   font-style: italic;
   border-left: 3px solid var(--crimson);
   padding-left: 1rem;
+}
+
+/* ─── SQUAD MATRIX ─── */
+.squad-day-tabs {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+.squad-tab {
+  font-family: 'Oswald', sans-serif;
+  font-size: .82rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255,255,255,.04);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: .6rem 1.4rem;
+  cursor: pointer;
+  transition: color var(--transition), background var(--transition), border-color var(--transition);
+}
+.squad-tab:hover {
+  color: var(--off-white);
+  border-color: rgba(201,168,76,.3);
+}
+.squad-tab.active {
+  color: var(--gold-lt);
+  background: rgba(201,168,76,.1);
+  border-color: rgba(201,168,76,.5);
+}
+.squad-panel { display: none; }
+.squad-panel.active { display: block; }
+.squad-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .45rem;
+  margin-bottom: 1.25rem;
+}
+.squad-legend .sq {
+  font-size: .8rem;
+  min-width: 44px;
+  padding: .35rem .6rem;
+}
+.squad-table-wrap {
+  overflow-x: auto;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+}
+.squad-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .82rem;
+  min-width: 700px;
+}
+.squad-table th {
+  font-family: 'Oswald', sans-serif;
+  font-size: .68rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.08);
+  padding: .7rem .6rem;
+  text-align: center;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+.squad-table th:first-child { text-align: left; padding-left: 1rem; }
+.squad-table td {
+  padding: .5rem .6rem;
+  border-bottom: 1px solid rgba(255,255,255,.04);
+  text-align: center;
+  white-space: nowrap;
+}
+.squad-table td.t {
+  text-align: left;
+  font-size: .75rem;
+  color: var(--text-muted);
+  letter-spacing: .04em;
+  font-variant-numeric: tabular-nums;
+  padding-left: 1rem;
+  padding-right: .8rem;
+}
+.squad-table tr:last-child td { border-bottom: none; }
+.sq {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oswald', sans-serif;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .05em;
+  border-radius: 4px;
+  min-width: 36px;
+  padding: .25rem .4rem;
+}
+.sq-1  { background: rgba(220, 38, 38,.22); color: #FCA5A5; border: 1px solid rgba(220, 38, 38,.4); }
+.sq-2  { background: rgba(234, 88, 12,.22); color: #FDBA74; border: 1px solid rgba(234, 88, 12,.4); }
+.sq-3  { background: rgba(202,138,  4,.22); color: #FCD34D; border: 1px solid rgba(202,138,  4,.4); }
+.sq-4  { background: rgba( 22,163, 74,.22); color: #86EFAC; border: 1px solid rgba( 22,163, 74,.4); }
+.sq-5  { background: rgba(  6,182,212,.22); color: #67E8F9; border: 1px solid rgba(  6,182,212,.4); }
+.sq-6  { background: rgba( 37, 99,235,.22); color: #93C5FD; border: 1px solid rgba( 37, 99,235,.4); }
+.sq-7  { background: rgba(124, 58,237,.22); color: #C4B5FD; border: 1px solid rgba(124, 58,237,.4); }
+.sq-8  { background: rgba(219, 39,119,.22); color: #F9A8D4; border: 1px solid rgba(219, 39,119,.4); }
+.sq-9  { background: rgba( 20,184,166,.22); color: #5EEAD4; border: 1px solid rgba( 20,184,166,.4); }
+.sq-10 { background: rgba(132,204, 22,.22); color: #BEF264; border: 1px solid rgba(132,204, 22,.4); }
+.lunch-row td { background: rgba(255,255,255,.03); }
+.lunch-cell {
+  text-align: center !important;
+  color: var(--text-muted);
+  font-style: italic;
+  font-size: .82rem;
+  letter-spacing: .1em;
+  padding: .65rem !important;
 }
 
 /* ─── SPONSORS ─── */
