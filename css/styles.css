@@ -71,13 +71,6 @@ body {
   width: auto;
   object-fit: contain;
   border-radius: 4px;
-  /* White-bg logo: multiply makes white transparent on dark nav */
-  mix-blend-mode: multiply;
-}
-#navbar.scrolled .nav-match-logo {
-  /* On scrolled (dark) nav, invert so it reads white */
-  filter: invert(1);
-  mix-blend-mode: screen;
 }
 .nav-year-badge {
   font-family: 'Oswald', sans-serif;
