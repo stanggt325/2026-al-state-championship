@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>2026 USPSA Alabama State Championship</title>
+  <title>Kimber 2026 USPSA Alabama State Championship presented by BELT - Digital Matchbook</title>
+  <link rel="icon" type="image/png" href="img/Match Logo.png.png" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -15,8 +16,8 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <img src="img/fwalabamasection/Logo Linear_W.png" alt="Alabama USPSA Section" class="nav-section-logo" />
-        <span class="logo-year nav-year-badge">2026</span>
+        <img src="img/Match Logo.png.png" alt="Alabama State Championship" class="nav-match-logo" />
+        <span class="nav-year-badge">2026</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -43,15 +44,14 @@
         <div class="hero-sponsor-slot hero-sponsor-kimber">
           <div class="hsl-label">Title Sponsor</div>
           <div class="hsl-logo-box" id="kimberLogoBox">
-            <img src="img/KimberLogo_Black.png" alt="Kimber" class="hsl-img" />
+            <img src="img/title/KimberLogo_Black.png" alt="Kimber" class="hsl-img hsl-img-invert" />
           </div>
         </div>
         <div class="hsl-divider"></div>
         <div class="hero-sponsor-slot hero-sponsor-belt">
           <div class="hsl-label">Presented By</div>
-          <div class="hsl-logo-box" id="beltLogoBox">
-            <!-- Replace src with real logo: <img src="img/belt-logo.png" alt="BELT"> -->
-            <span class="hsl-name">BELT</span>
+          <div class="hsl-logo-box hsl-logo-box-belt" id="beltLogoBox">
+            <img src="img/presented/HCBLT.PNG" alt="BELT" class="hsl-img hsl-img-screen" />
           </div>
         </div>
       </div>
@@ -110,6 +110,7 @@
           <ul class="staff-list">
             <li><span class="staff-role">Match Director</span><span class="staff-name">Jim Palmer</span></li>
             <li><span class="staff-role">Range Master</span><span class="staff-name">Gary McConnell</span></li>
+            <li><span class="staff-role">Co-Range Master</span><span class="staff-name">Ike Starns</span></li>
             <li><span class="staff-role">Co-Match Director &amp; Stage Design</span><span class="staff-name">Jeremy Hughes</span></li>
             <li><span class="staff-role">Stats</span><span class="staff-name">Steve Fischer</span></li>
             <li><span class="staff-role">Set-up Crew</span><span class="staff-name">Our Dedicated Volunteers</span></li>
@@ -559,40 +560,25 @@
         <div class="sponsors-grid title-sponsors-grid">
           <div class="sponsor-card sponsor-title">
             <div class="sponsor-title-badge">Title Sponsor</div>
-            <img src="img/KimberLogo_Black.png" alt="Kimber" class="sponsor-logo-img" />
+            <img src="img/title/KimberLogo_Black.png" alt="Kimber" class="sponsor-logo-img sponsor-logo-invert" />
           </div>
           <div class="sponsor-card sponsor-title sponsor-presented">
             <div class="sponsor-title-badge presented-badge">Presented By</div>
-            <!-- Replace with: <img src="img/belt-logo.png" alt="BELT" class="sponsor-logo-img"> -->
-            <div class="sponsor-placeholder sponsor-name-lg">BELT</div>
+            <img src="img/presented/HCBLT.PNG" alt="BELT" class="sponsor-logo-img sponsor-logo-screen" />
           </div>
         </div>
       </div>
 
-      <!-- Gold Sponsors -->
+      <!-- Gold Sponsors — order randomized by script.js on each page load -->
       <div class="sponsors-tier">
         <h3 class="tier-label gold">Gold Sponsors</h3>
-        <div class="sponsors-grid gold-tier">
-          <div class="sponsor-card gold">
-            <!-- Drop img/pov-nutrition-logo.png in when ready -->
-            <div class="sponsor-placeholder">POV Nutrition</div>
-          </div>
-          <div class="sponsor-card gold"><div class="sponsor-placeholder">Gold Sponsor</div></div>
-          <div class="sponsor-card gold"><div class="sponsor-placeholder">Gold Sponsor</div></div>
-        </div>
+        <div class="sponsors-grid gold-tier" id="gold-sponsors-grid"></div>
       </div>
 
-      <!-- Silver Sponsors -->
+      <!-- Silver Sponsors — order randomized by script.js on each page load -->
       <div class="sponsors-tier">
         <h3 class="tier-label silver">Silver Sponsors</h3>
-        <div class="sponsors-grid">
-          <div class="sponsor-card">
-            <img src="img/Springer Precision.jpg" alt="Springer Precision" class="sponsor-logo-img sponsor-logo-light" />
-          </div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Silver Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Silver Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Silver Sponsor</div></div>
-        </div>
+        <div class="sponsors-grid" id="silver-sponsors-grid"></div>
       </div>
     </div>
   </section>
@@ -649,7 +635,7 @@
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <img src="img/fwalabamasection/Logo Linear_W.png" alt="Alabama USPSA Section" class="footer-section-logo" />
+        <img src="img/Match Logo.png.png" alt="Alabama State Championship" class="footer-match-logo" />
         <div class="footer-presented">The Kimber 2026 Alabama State Championship<br/>Presented by BELT</div>
       </div>
       <div class="footer-links">

@@ -105,6 +105,74 @@ document.querySelectorAll(
   }
 })();
 
+/* ─── SPONSOR RANDOMIZATION ─── */
+(function renderSponsors() {
+
+  const goldSponsors = [
+    { img: 'img/gold/anderson-logo.png',            name: 'Anderson Manufacturing' },
+    { img: 'img/gold/c-more-logo.png',              name: 'C-More Systems'         },
+    { img: 'img/gold/holosun-logo.png',             name: 'Holosun'                },
+    { img: 'img/gold/lok-grips.png',                name: 'LOK Grips'              },
+    { img: 'img/gold/outdoor-dynamics-logo.png',    name: 'Outdoor Dynamics'       },
+    { img: 'img/gold/pov-nutrition-logo.png.jpg',   name: 'POV Nutrition'          },
+    { img: 'img/gold/shooters-connection-logo.png', name: "Shooter's Connection"   },
+    { img: 'img/gold/Springer Precision.jpg',       name: 'Springer Precision'     },
+    { img: 'img/gold/vortex-logo.svg',              name: 'Vortex Optics'          },
+    { img: 'img/gold/zeroed-ammo.png',              name: 'Zeroed Ammo'            },
+  ];
+
+  // Add silver sponsor objects here when logos are available:
+  // { img: 'img/silver/sponsor-logo.png', name: 'Sponsor Name' }
+  const silverSponsors = [];
+
+  function shuffle(arr) {
+    const a = [...arr];
+    for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+    }
+    return a;
+  }
+
+  function buildCard(sponsor, extraClass) {
+    const card = document.createElement('div');
+    card.className = `sponsor-card${extraClass ? ' ' + extraClass : ''} reveal`;
+    if (sponsor.img) {
+      const img = document.createElement('img');
+      img.src   = sponsor.img;
+      img.alt   = sponsor.name;
+      img.className = 'sponsor-logo-img';
+      img.loading = 'lazy';
+      card.appendChild(img);
+    } else {
+      const ph = document.createElement('div');
+      ph.className = 'sponsor-placeholder';
+      ph.textContent = sponsor.name;
+      card.appendChild(ph);
+    }
+    return card;
+  }
+
+  function populateGrid(sponsors, containerId, cardClass) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    if (sponsors.length === 0) {
+      container.closest('.sponsors-tier').style.display = 'none';
+      return;
+    }
+    shuffle(sponsors).forEach(s => {
+      const card = buildCard(s, cardClass);
+      container.appendChild(card);
+      // Wire into scroll-reveal after DOM insertion
+      card.classList.add('reveal');
+      revealObserver.observe(card);
+    });
+  }
+
+  populateGrid(goldSponsors,   'gold-sponsors-grid',   'gold');
+  populateGrid(silverSponsors, 'silver-sponsors-grid', '');
+})();
+
 /* ─── ACTIVE NAV LINK ON SCROLL ─── */
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');

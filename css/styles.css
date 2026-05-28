@@ -66,12 +66,18 @@ body {
   gap: .35rem;
   flex-shrink: 0;
 }
-.nav-section-logo {
-  height: 32px;
+.nav-match-logo {
+  height: 36px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: .9;
+  border-radius: 4px;
+  /* White-bg logo: multiply makes white transparent on dark nav */
+  mix-blend-mode: multiply;
+}
+#navbar.scrolled .nav-match-logo {
+  /* On scrolled (dark) nav, invert so it reads white */
+  filter: invert(1);
+  mix-blend-mode: screen;
 }
 .nav-year-badge {
   font-family: 'Oswald', sans-serif;
@@ -218,9 +224,12 @@ body {
   max-width: 200px;
   width: auto;
   object-fit: contain;
-  filter: invert(1);
-  mix-blend-mode: screen;
 }
+/* Black-on-white logos (e.g. Kimber): invert + screen to appear white on dark bg */
+.hsl-img-invert { filter: invert(1); mix-blend-mode: screen; }
+/* Dark-bg logos (e.g. BELT): screen blend only — black disappears */
+.hsl-img-screen { mix-blend-mode: screen; }
+.hsl-logo-box-belt { border-color: rgba(220,38,38,.3); background: rgba(220,38,38,.04); }
 .hero-sponsor-kimber .hsl-logo-box { min-width: 180px; }
 .hsl-name {
   font-family: 'Bebas Neue', sans-serif;
@@ -770,19 +779,16 @@ address { font-style: normal; }
 }
 .presented-badge { color: var(--text-muted); background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
 .sponsor-logo-img {
-  max-height: 60px;
+  max-height: 64px;
   max-width: 85%;
   object-fit: contain;
-  /* Black-on-white logos: invert to white, screen blend hides the white background */
-  filter: invert(1);
+  /* Default: screen blend — black backgrounds disappear on dark cards */
   mix-blend-mode: screen;
 }
-.sponsor-logo-light {
-  /* Dark-background logos (e.g. Springer Precision): no filter needed */
-  filter: none;
-  mix-blend-mode: normal;
-  max-height: 50px;
-}
+/* Black-on-white logos (e.g. Kimber): invert first, then screen */
+.sponsor-logo-invert { filter: invert(1); mix-blend-mode: screen; }
+/* Already dark-bg logos (Springer, BELT): screen only */
+.sponsor-logo-screen { mix-blend-mode: screen; }
 .sponsor-name-lg {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 2.2rem;
@@ -904,14 +910,16 @@ address { font-style: normal; }
   gap: 3rem;
   align-items: start;
 }
-.footer-section-logo {
-  height: 36px;
+.footer-match-logo {
+  height: 48px;
   width: auto;
   object-fit: contain;
-  filter: brightness(0) invert(1);
-  opacity: .7;
   margin-bottom: .6rem;
   display: block;
+  border-radius: 4px;
+  /* White-bg logo: multiply makes white disappear on dark footer */
+  mix-blend-mode: multiply;
+  opacity: .85;
 }
 .footer-presented {
   font-size: .78rem;
