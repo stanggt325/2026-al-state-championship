@@ -16,7 +16,7 @@ navLinks.querySelectorAll('a').forEach(a => {
 
 /* ─── COUNTDOWN TIMER ─── */
 (function initCountdown() {
-  const target = new Date('2026-06-11T08:30:00');
+  const target = new Date('2026-06-11T09:00:00');
   function update() {
     const now  = Date.now();
     const diff = target - now;
