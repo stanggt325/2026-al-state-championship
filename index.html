@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2026 USPSA Alabama State Championship</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=Bebas+Neue&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ─── NAVIGATION ─── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">
+        <span class="logo-al">AL</span><span class="logo-state">STATE</span>
+        <span class="logo-year">2026</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#welcome">Welcome</a></li>
+        <li><a href="#briefing">Briefing</a></li>
+        <li><a href="#stages">Stages</a></li>
+        <li><a href="#schedule">Schedule</a></li>
+        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="#directions">Directions</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section id="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-particles" id="particles"></div>
+    <div class="hero-content">
+      <div class="hero-presented">The USPSA Alabama Section &amp; BELT Proudly Present</div>
+      <h1 class="hero-title">
+        <span class="hero-title-line1">Alabama</span>
+        <span class="hero-title-line2">State Championship</span>
+      </h1>
+      <div class="hero-subtitle">USPSA · JUNE 11–14, 2026</div>
+      <div class="hero-location">Talladega CMP Marksmanship Park · Talladega, AL</div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <span class="stat-num" data-target="10">0</span>
+          <span class="stat-label">Stages</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="272">0</span>
+          <span class="stat-label">Min. Rounds</span>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stat">
+          <span class="stat-num" data-target="4">0</span>
+          <span class="stat-label">Days of Competition</span>
+        </div>
+      </div>
+      <div class="hero-countdown" id="countdown">
+        <div class="cd-block"><span id="cd-days">--</span><span class="cd-label">Days</span></div>
+        <div class="cd-block"><span id="cd-hrs">--</span><span class="cd-label">Hours</span></div>
+        <div class="cd-block"><span id="cd-min">--</span><span class="cd-label">Minutes</span></div>
+        <div class="cd-block"><span id="cd-sec">--</span><span class="cd-label">Seconds</span></div>
+      </div>
+      <a href="#welcome" class="hero-cta">View Match Book</a>
+    </div>
+    <div class="hero-scroll-hint">
+      <span>SCROLL</span>
+      <div class="scroll-arrow"></div>
+    </div>
+  </section>
+
+  <!-- ─── WELCOME ─── -->
+  <section id="welcome" class="section section-dark">
+    <div class="section-inner">
+      <div class="section-tag">Welcome</div>
+      <h2 class="section-title">Welcome to the 2026<br/><em>Alabama State Championship</em></h2>
+      <div class="welcome-grid">
+        <div class="welcome-message">
+          <p>On behalf of the Alabama USPSA Section, Talladega Practical Shooters, and the Talladega CMP Marksmanship Park, thank you for participating in the <strong>2026 Alabama USPSA State Championship</strong>, presented by <strong>BELT</strong>.</p>
+          <p>A great deal of time and effort has gone into the preparation, set-up, and organization of the match to make it fun and challenging. Please be safe, help the staff keep the match moving, and most of all, have fun.</p>
+          <p>Please join us in extending a <em>"Thank You"</em> to our sponsors and match staff. Without them, this match would not be possible. Each has donated significant time and effort.</p>
+          <p>We would also like to thank <strong>CMP Talladega</strong> for allowing us to host this match at their facility as well as all of the support throughout the year.</p>
+        </div>
+        <div class="welcome-staff">
+          <h3 class="staff-heading">Match Leadership &amp; Staff</h3>
+          <ul class="staff-list">
+            <li><span class="staff-role">Match Director</span><span class="staff-name">Jim Palmer</span></li>
+            <li><span class="staff-role">Range Master</span><span class="staff-name">Gary McConnell</span></li>
+            <li><span class="staff-role">Co-Match Director &amp; Stage Design</span><span class="staff-name">Jeremy Hughes</span></li>
+            <li><span class="staff-role">Stats</span><span class="staff-name">Steve Fischer</span></li>
+            <li><span class="staff-role">Set-up Crew</span><span class="staff-name">Our Dedicated Volunteers</span></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── BRIEFING ─── -->
+  <section id="briefing" class="section section-mid">
+    <div class="section-inner">
+      <div class="section-tag">Match Briefing</div>
+      <h2 class="section-title">Everything You<br/><em>Need to Know</em></h2>
+
+      <div class="briefing-grid">
+
+        <div class="brief-card">
+          <div class="brief-icon">🎯</div>
+          <h3>Match Scoring</h3>
+          <ul>
+            <li>Live scoring via <strong>PractiScore</strong> — uploaded continuously.</li>
+            <li>No paper prints. Review scores on the PractiScore website.</li>
+            <li>Report errors to shooter services immediately.</li>
+            <li>1-hour arbitration window after "final" scores are posted.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">🏆</div>
+          <h3>Awards &amp; Prizes</h3>
+          <ul>
+            <li>Awards follow USPSA Rule Book Appendix A2 (min. 5 competitors per division/class).</li>
+            <li>Conferred to overall high shooters, Alabama champions, and first-place class finishers.</li>
+            <li>No formal ceremony — winners announced via email and social media.</li>
+            <li>Random draw prizes delivered to shooters during the day.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">📋</div>
+          <h3>Registration &amp; Meeting</h3>
+          <ul>
+            <li>Head to your first stage by <strong>8:30 AM</strong>.</li>
+            <li>No formal shooters' meeting — short briefing at your first stage.</li>
+            <li>Range opens at <strong>7:30 AM</strong>. Shooting begins at <strong>9:00 AM</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">🔒</div>
+          <h3>Range Safety</h3>
+          <ul>
+            <li><strong>Cold Range.</strong> Firearms handled only in designated safety areas or under RO supervision.</li>
+            <li>Safety areas used for bagging/holstering, dry fire, and repair. No ammunition allowed.</li>
+            <li>Eye and hearing protection mandatory for all competitors and spectators at all times.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">🔫</div>
+          <h3>Pistol Caliber Carbine (PCC)</h3>
+          <ul>
+            <li>Carry vertically (muzzle up or down). Chamber flags installed until instructed by RO.</li>
+            <li>Staged in bays or carts, muzzle toward backstop/side berm.</li>
+            <li>"Cased" = sleeve covering muzzle past trigger guard.</li>
+            <li>Failure to point muzzle safely during casing/uncasing = DQ.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">🌡️</div>
+          <h3>Heat Advisory</h3>
+          <ul>
+            <li>This match is held in <strong>June in Alabama</strong>. Expect heat, sun, and humidity.</li>
+            <li>Limited shade on the range.</li>
+            <li>Hydrate before, during, and after. Water provided on each bay.</li>
+            <li>Seek shade when possible between stages.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">🔢</div>
+          <h3>Round Count</h3>
+          <ul>
+            <li>Minimum round count: <strong>272 rounds</strong>.</li>
+            <li>Recommended: <strong>350+ rounds</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">📦</div>
+          <h3>Shipping Ammo</h3>
+          <p>Ship ammo to:</p>
+          <address>
+            CMP Talladega Marksmanship Park<br/>
+            c/o 2026 USPSA Alabama State Championship<br/>
+            4387 Turner Mill Rd W<br/>
+            Talladega, AL 35160
+          </address>
+        </div>
+
+        <div class="brief-card">
+          <div class="brief-icon">🍽️</div>
+          <h3>Food &amp; Facilities</h3>
+          <ul>
+            <li>Lunch provided for competitors and staff. Extra meals available for purchase.</li>
+            <li>Complimentary bottled water in each bay.</li>
+            <li>Restrooms near main parking lot; portable toilets near stages.</li>
+            <li>Registration &amp; shooter services at the range shack near Bay A4.</li>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── STAGES ─── -->
+  <section id="stages" class="section section-dark">
+    <div class="section-inner">
+      <div class="section-tag">Stage Descriptions</div>
+      <h2 class="section-title">10 Stages.<br/><em>272+ Rounds of Action.</em></h2>
+      <div class="stages-grid">
+
+        <div class="stage-card" data-stage="1">
+          <div class="stage-number">01</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Opelika</h3>
+            <div class="stage-designer">by Jessie Henderson</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">23 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>10 USPSA Targets</span>
+              <span>3 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Standing outside shooting area, wrists above shoulders. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange, strong hand above strong shoulder.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets. P1 activates S1, which is visible at rest.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="2">
+          <div class="stage-number">02</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Grant</h3>
+            <div class="stage-designer">by Jeremy Hughes · Original by John Taylor</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">26 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>13 USPSA Targets</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Feet on marks, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets from within the shooting area.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="3">
+          <div class="stage-number">03</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Tuscaloosa</h3>
+            <div class="stage-designer">by Jeremy Hughes</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">26 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>12 USPSA Targets</span>
+              <span>2 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Both hands on marks, wrists below belt. Handgun loaded &amp; holstered. PCC: safety on, muzzle touching mark.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets from within the shooting area.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="4">
+          <div class="stage-number">04</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Slapout</h3>
+            <div class="stage-designer">by Cameron Fricke</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">32 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>14 USPSA Targets</span>
+              <span>2 Poppers</span>
+              <span>2 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Feet on marks, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets from within the shooting area.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="5">
+          <div class="stage-number">05</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Evergreen</h3>
+            <div class="stage-designer">by Matthew Kennedy</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">26 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>11 USPSA Targets</span>
+              <span>4 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Both feet on marks. Handgun/PCC unloaded, lying flat on barrel, unpropped, trigger guard over mark. First magazine must come from the barrel.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets from within the shooting area.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="6">
+          <div class="stage-number">06</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Orange Beach</h3>
+            <div class="stage-designer">by Jeremy Hughes</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">29 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>13 USPSA Targets</span>
+              <span>3 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Straddling either side-fault line, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets. P1 activates S1 (Tip out), which remains visible at rest.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="7">
+          <div class="stage-number">07</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Talladega</h3>
+            <div class="stage-designer">by Andy Patel</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">29 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>13 USPSA Targets</span>
+              <span>2 Poppers</span>
+              <span>1 Mini Popper</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Standing anywhere in shooting area, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets. P1 or P2 activates S1; S1 remains visible at rest.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="8">
+          <div class="stage-number">08</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Auburn</h3>
+            <div class="stage-designer">by Rodney Hawkins</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">27 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>11 USPSA Targets</span>
+              <span>5 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Both feet on marks, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets from within the shooting area.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="9">
+          <div class="stage-number">09</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Eclectic</h3>
+            <div class="stage-designer">by Jeremy Hughes</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">29 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>13 USPSA Targets</span>
+              <span>2 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Both feet touching marks, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets. Either P1 or P2 activates Max Trap, which is not visible at rest.
+            </div>
+          </div>
+        </div>
+
+        <div class="stage-card" data-stage="10">
+          <div class="stage-number">10</div>
+          <div class="stage-body">
+            <h3 class="stage-name">Ohatchee</h3>
+            <div class="stage-designer">by Colton Dover</div>
+            <div class="stage-pills">
+              <span class="pill">Comstock</span>
+              <span class="pill pill-rounds">25 Rounds</span>
+            </div>
+            <div class="stage-targets">
+              <span>10 USPSA Targets</span>
+              <span>5 Mini Poppers</span>
+            </div>
+            <div class="stage-detail">
+              <strong>Start:</strong> Toes of both feet touching rear fault line, wrists below belt. Handgun loaded &amp; holstered. PCC: stock on belt, safety on, muzzle downrange.
+            </div>
+            <div class="stage-detail">
+              <strong>Procedure:</strong> On the start signal, engage all targets from within the shooting area.
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="rounds-banner">
+        <div class="rb-item"><span class="rb-num">272</span><span class="rb-label">Minimum Rounds</span></div>
+        <div class="rb-divider">·</div>
+        <div class="rb-item"><span class="rb-num">350+</span><span class="rb-label">Recommended</span></div>
+        <div class="rb-divider">·</div>
+        <div class="rb-item"><span class="rb-num">Comstock</span><span class="rb-label">All Stages</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SCHEDULE ─── -->
+  <section id="schedule" class="section section-mid">
+    <div class="section-inner">
+      <div class="section-tag">Schedule</div>
+      <h2 class="section-title">Match Schedule<br/><em>June 11–14, 2026</em></h2>
+      <div class="schedule-table-wrap">
+        <table class="schedule-table">
+          <thead>
+            <tr>
+              <th>Day</th>
+              <th>Date</th>
+              <th>Time</th>
+              <th>Activity</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Thursday</td>
+              <td>June 11</td>
+              <td>All Day</td>
+              <td>Setup / Volunteer Day</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>June 12</td>
+              <td>7:30 AM</td>
+              <td>Range Opens</td>
+            </tr>
+            <tr>
+              <td>Friday</td>
+              <td>June 12</td>
+              <td>9:00 AM</td>
+              <td>Stage 1 Shooting Begins</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>June 13</td>
+              <td>7:30 AM</td>
+              <td>Range Opens</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>June 13</td>
+              <td>9:00 AM</td>
+              <td>Competition Continues</td>
+            </tr>
+            <tr>
+              <td>Saturday</td>
+              <td>June 13</td>
+              <td>By Appt.</td>
+              <td>Range Inspection (when vacant)</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>June 14</td>
+              <td>7:30 AM</td>
+              <td>Range Opens</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>June 14</td>
+              <td>9:00 AM</td>
+              <td>Final Day of Competition</td>
+            </tr>
+            <tr>
+              <td>Sunday</td>
+              <td>June 14</td>
+              <td>TBD</td>
+              <td>Final Scores Posted / Arbitration Window Opens</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="schedule-note">
+        Squad schedules will be posted on PractiScore. Check your squad assignment for stage rotation order.
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SPONSORS ─── -->
+  <section id="sponsors" class="section section-dark">
+    <div class="section-inner">
+      <div class="section-tag">Sponsors</div>
+      <h2 class="section-title">Our Generous<br/><em>Sponsors</em></h2>
+      <p class="sponsors-intro">This match would not be possible without the generous support of our sponsors. Thank you for making the 2026 Alabama State Championship a reality.</p>
+      <div class="sponsors-tier">
+        <h3 class="tier-label gold">Gold Sponsors</h3>
+        <div class="sponsors-grid gold-tier">
+          <div class="sponsor-card gold">
+            <div class="sponsor-placeholder">Sponsor Logo</div>
+          </div>
+          <div class="sponsor-card gold">
+            <div class="sponsor-placeholder">Sponsor Logo</div>
+          </div>
+          <div class="sponsor-card gold">
+            <div class="sponsor-placeholder">Sponsor Logo</div>
+          </div>
+        </div>
+      </div>
+      <div class="sponsors-tier">
+        <h3 class="tier-label silver">Supporting Sponsors</h3>
+        <div class="sponsors-grid">
+          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── DIRECTIONS ─── -->
+  <section id="directions" class="section section-mid">
+    <div class="section-inner">
+      <div class="section-tag">Directions &amp; Facilities</div>
+      <h2 class="section-title">Getting There &amp;<br/><em>Range Layout</em></h2>
+      <div class="directions-grid">
+        <div class="dir-info">
+          <div class="dir-block">
+            <h3>Match Location</h3>
+            <p><strong>Talladega CMP Marksmanship Park</strong><br/>Range 5<br/>4387 Turner Mill Rd W<br/>Talladega, AL 35160</p>
+            <a class="dir-link" href="https://maps.google.com/?q=Talladega+CMP+Marksmanship+Park" target="_blank" rel="noopener">Open in Google Maps ↗</a>
+          </div>
+          <div class="dir-block">
+            <h3>Parking</h3>
+            <ul>
+              <li>Park in designated yellow "Competitor Parking" areas only.</li>
+              <li>Keep all access roadways clear for range staff and emergency vehicles.</li>
+            </ul>
+          </div>
+          <div class="dir-block">
+            <h3>CMP Waiver</h3>
+            <p>All competitors and spectators must complete a CMP waiver before entering the range.</p>
+            <a class="dir-link" href="https://tmp.thecmp.org/" target="_blank" rel="noopener">Complete Waiver at tmp.thecmp.org ↗</a>
+          </div>
+          <div class="dir-block">
+            <h3>Spectators</h3>
+            <ul>
+              <li>Must complete a waiver and wear eye &amp; hearing protection at all times.</li>
+              <li>Children under direct parental supervision at all times.</li>
+              <li>No coaching or taunting competitors.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="dir-map">
+          <div class="map-embed-wrap">
+            <iframe
+              title="Talladega CMP Marksmanship Park"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3312.4!2d-86.1700!3d33.4600!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x888a5c3e1f7b4c91%3A0x1!2sTalladega+CMP+Marksmanship+Park!5e0!3m2!1sen!2sus!4v1"
+              allowfullscreen=""
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer id="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <div class="footer-logo">2026 USPSA<br/>Alabama State Championship</div>
+        <div class="footer-presented">Presented by the Alabama USPSA Section &amp; BELT</div>
+      </div>
+      <div class="footer-links">
+        <a href="#welcome">Welcome</a>
+        <a href="#briefing">Briefing</a>
+        <a href="#stages">Stages</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#sponsors">Sponsors</a>
+        <a href="#directions">Directions</a>
+      </div>
+      <div class="footer-legal">
+        <p>June 11–14, 2026 · Talladega CMP Marksmanship Park · Talladega, AL</p>
+        <p>All competitors must be individual members of USPSA. Current USPSA Rule Book governs all competition. CMP waiver required on-site.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
