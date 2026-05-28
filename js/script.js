@@ -114,9 +114,9 @@ document.querySelectorAll(
     { img: 'img/gold/holosun-logo.png',             name: 'Holosun'                },
     { img: 'img/gold/lok-grips.png',                name: 'LOK Grips'              },
     { img: 'img/gold/outdoor-dynamics-logo.png',    name: 'Outdoor Dynamics'       },
-    { img: 'img/gold/pov-nutrition-logo.png.jpg',   name: 'POV Nutrition'          },
+    { img: 'img/gold/pov-nutrition-logo.png',        name: 'POV Nutrition'          },
     { img: 'img/gold/shooters-connection-logo.png', name: "Shooter's Connection"   },
-    { img: 'img/gold/Springer Precision.jpg',       name: 'Springer Precision'     },
+    { img: 'img/gold/springer-precision-logo.jpg',  name: 'Springer Precision'     },
     { img: 'img/gold/vortex-logo.svg',              name: 'Vortex Optics'          },
     { img: 'img/gold/zeroed-ammo.png',              name: 'Zeroed Ammo'            },
   ];

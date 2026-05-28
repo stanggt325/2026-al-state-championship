@@ -626,12 +626,14 @@ address { font-style: normal; }
   height: 105px;
   right: 0;
 }
-/* White/light-background logos: invert so bg → black (disappears with screen blend) */
-.stage-card[data-stage="6"] .stage-sponsor-bg,
+/* White-background logos: invert so bg → black (disappears with screen blend) */
 .stage-card[data-stage="7"] .stage-sponsor-bg,
-.stage-card[data-stage="8"] .stage-sponsor-bg,
 .stage-card[data-stage="9"] .stage-sponsor-bg {
   filter: invert(1) grayscale(1) brightness(3);
+}
+/* Dark-background JPEG: lower brightness so bg stays close to card color */
+.stage-card[data-stage="8"] .stage-sponsor-bg {
+  filter: grayscale(1) brightness(1.2);
 }
 .stage-sponsor-credit {
   font-family: 'Oswald', sans-serif;
