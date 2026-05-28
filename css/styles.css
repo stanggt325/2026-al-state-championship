@@ -785,6 +785,19 @@ address { font-style: normal; }
 }
 .schedule-table tr:hover td { background: rgba(255,255,255,.025); }
 .schedule-table tr:last-child td { border-bottom: none; }
+.schedule-day-header td {
+  font-family: 'Oswald', sans-serif;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.06);
+  border-top: 1px solid rgba(201,168,76,.18);
+  padding-top: 1rem;
+  padding-bottom: .55rem;
+}
+.schedule-day-header:first-child td { border-top: none; }
 .schedule-note {
   font-size: .85rem;
   color: var(--text-muted);
