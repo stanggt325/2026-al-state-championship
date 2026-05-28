@@ -612,7 +612,7 @@ address { font-style: normal; }
 .stage-card[data-stage="1"] .stage-sponsor-bg {
   width: 175px;
   height: 105px;
-  top: -1.5rem;
+  top: -0.75rem;
 }
 /* Stage 2: 25% smaller, slight upward nudge only */
 .stage-card[data-stage="2"] .stage-sponsor-bg {
