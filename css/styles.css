@@ -591,7 +591,32 @@ address { font-style: normal; }
   display: flex;
   gap: 0;
   overflow: hidden;
+  position: relative;
   transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
+}
+.stage-sponsor-bg {
+  position: absolute;
+  top: .75rem;
+  right: .75rem;
+  width: 86px;
+  height: 52px;
+  object-fit: contain;
+  opacity: .11;
+  mix-blend-mode: screen;
+  filter: grayscale(1) brightness(2.5);
+  pointer-events: none;
+  transition: opacity var(--transition);
+}
+.stage-card:hover .stage-sponsor-bg { opacity: .22; }
+.stage-sponsor-credit {
+  font-family: 'Oswald', sans-serif;
+  font-size: .68rem;
+  font-weight: 500;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--gold);
+  opacity: .8;
+  margin-bottom: .75rem;
 }
 .stage-card:hover {
   border-color: rgba(220,38,38,.5);
