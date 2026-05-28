@@ -66,26 +66,24 @@ body {
   gap: .35rem;
   flex-shrink: 0;
 }
-.logo-al {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 1.8rem;
-  color: var(--crimson-lt);
-  letter-spacing: .05em;
+.nav-section-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: .9;
 }
-.logo-state {
+.nav-year-badge {
   font-family: 'Oswald', sans-serif;
-  font-size: 1rem;
+  font-size: .75rem;
   font-weight: 600;
-  color: var(--white);
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-.logo-year {
-  font-family: 'Oswald', sans-serif;
-  font-size: .85rem;
-  font-weight: 400;
   color: var(--gold);
-  letter-spacing: .1em;
+  letter-spacing: .18em;
+  background: rgba(201,168,76,.12);
+  border: 1px solid rgba(201,168,76,.3);
+  padding: .15rem .45rem;
+  border-radius: 3px;
+  align-self: center;
 }
 .nav-links {
   display: flex;
@@ -177,24 +175,84 @@ body {
   padding: calc(var(--nav-h) + 2rem) 1.5rem 4rem;
   max-width: 900px;
 }
-.hero-presented {
-  font-family: 'Inter', sans-serif;
-  font-size: .78rem;
-  font-weight: 500;
-  letter-spacing: .3em;
-  text-transform: uppercase;
-  color: var(--gold);
-  margin-bottom: 1.5rem;
+/* ─── HERO SPONSOR LOCKUP ─── */
+.hero-sponsor-lockup {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2rem;
   opacity: 0;
   animation: fadeUp .8s .2s forwards;
 }
+.hero-sponsor-slot {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  padding: 0 2.5rem;
+}
+.hsl-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+.hsl-logo-box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  min-height: 64px;
+  border: 1px dashed rgba(201,168,76,.35);
+  border-radius: var(--radius);
+  background: rgba(201,168,76,.04);
+  padding: .75rem 1.5rem;
+  transition: border-color var(--transition);
+}
+.hsl-logo-box img,
+.hsl-img {
+  max-height: 56px;
+  max-width: 200px;
+  width: auto;
+  object-fit: contain;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.hero-sponsor-kimber .hsl-logo-box { min-width: 180px; }
+.hsl-name {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 1.8rem;
+  letter-spacing: .12em;
+  color: var(--gold-lt);
+}
+.hero-sponsor-belt .hsl-name { color: var(--off-white); }
+.hsl-divider {
+  width: 1px;
+  height: 60px;
+  background: linear-gradient(to bottom, transparent, var(--border), transparent);
+  flex-shrink: 0;
+}
+
 .hero-title {
   display: flex;
   flex-direction: column;
+  align-items: center;
   line-height: 1;
   margin-bottom: 1.5rem;
   opacity: 0;
   animation: fadeUp .8s .4s forwards;
+}
+.hero-title-eyebrow {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.1rem, 3vw, 2rem);
+  font-weight: 500;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: .1em;
 }
 .hero-title-line1 {
   font-family: 'Bebas Neue', sans-serif;
@@ -672,8 +730,66 @@ address { font-style: normal; }
   text-transform: uppercase;
   margin-bottom: 1.25rem;
 }
+.tier-label.title-tier-label { color: var(--white); font-size: .8rem; }
 .tier-label.gold  { color: var(--gold-lt); }
 .tier-label.silver { color: #A0A0B0; }
+
+/* Title sponsor cards */
+.title-sponsors-grid {
+  gap: 1.5rem;
+  margin-bottom: .25rem;
+}
+.title-sponsors-grid .sponsor-card { flex: 1; min-width: 240px; max-width: 420px; }
+.sponsor-card.sponsor-title {
+  position: relative;
+  aspect-ratio: 3/1.2;
+  flex-direction: column;
+  gap: .5rem;
+  border-color: rgba(201,168,76,.4);
+  background: linear-gradient(135deg, rgba(201,168,76,.07), rgba(201,168,76,.03));
+  box-shadow: 0 0 40px rgba(201,168,76,.08);
+}
+.sponsor-card.sponsor-presented {
+  border-color: rgba(255,255,255,.18);
+  background: linear-gradient(135deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  box-shadow: none;
+}
+.sponsor-title-badge {
+  position: absolute;
+  top: .55rem; left: .75rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,168,76,.12);
+  border: 1px solid rgba(201,168,76,.25);
+  padding: .15rem .5rem;
+  border-radius: 3px;
+}
+.presented-badge { color: var(--text-muted); background: rgba(255,255,255,.05); border-color: rgba(255,255,255,.1); }
+.sponsor-logo-img {
+  max-height: 60px;
+  max-width: 85%;
+  object-fit: contain;
+  /* Black-on-white logos: invert to white, screen blend hides the white background */
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+.sponsor-logo-light {
+  /* Dark-background logos (e.g. Springer Precision): no filter needed */
+  filter: none;
+  mix-blend-mode: normal;
+  max-height: 50px;
+}
+.sponsor-name-lg {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 2.2rem;
+  letter-spacing: .12em;
+  color: var(--gold-lt);
+}
+.sponsor-card.sponsor-presented .sponsor-name-lg { color: var(--off-white); }
 .sponsors-grid {
   display: flex;
   flex-wrap: wrap;
@@ -788,15 +904,14 @@ address { font-style: normal; }
   gap: 3rem;
   align-items: start;
 }
-.footer-logo {
-  font-family: 'Oswald', sans-serif;
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--white);
-  letter-spacing: .05em;
-  text-transform: uppercase;
-  line-height: 1.3;
-  margin-bottom: .5rem;
+.footer-section-logo {
+  height: 36px;
+  width: auto;
+  object-fit: contain;
+  filter: brightness(0) invert(1);
+  opacity: .7;
+  margin-bottom: .6rem;
+  display: block;
 }
 .footer-presented {
   font-size: .78rem;

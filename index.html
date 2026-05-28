@@ -15,8 +15,8 @@
   <nav id="navbar">
     <div class="nav-inner">
       <a href="#hero" class="nav-logo">
-        <span class="logo-al">AL</span><span class="logo-state">STATE</span>
-        <span class="logo-year">2026</span>
+        <img src="img/fwalabamasection/Logo Linear_W.png" alt="Alabama USPSA Section" class="nav-section-logo" />
+        <span class="logo-year nav-year-badge">2026</span>
       </a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
         <span></span><span></span><span></span>
@@ -37,8 +37,27 @@
     <div class="hero-bg"></div>
     <div class="hero-particles" id="particles"></div>
     <div class="hero-content">
-      <div class="hero-presented">The USPSA Alabama Section &amp; BELT Proudly Present</div>
+
+      <!-- Title sponsor lockup -->
+      <div class="hero-sponsor-lockup">
+        <div class="hero-sponsor-slot hero-sponsor-kimber">
+          <div class="hsl-label">Title Sponsor</div>
+          <div class="hsl-logo-box" id="kimberLogoBox">
+            <img src="img/KimberLogo_Black.png" alt="Kimber" class="hsl-img" />
+          </div>
+        </div>
+        <div class="hsl-divider"></div>
+        <div class="hero-sponsor-slot hero-sponsor-belt">
+          <div class="hsl-label">Presented By</div>
+          <div class="hsl-logo-box" id="beltLogoBox">
+            <!-- Replace src with real logo: <img src="img/belt-logo.png" alt="BELT"> -->
+            <span class="hsl-name">BELT</span>
+          </div>
+        </div>
+      </div>
+
       <h1 class="hero-title">
+        <span class="hero-title-eyebrow">The Kimber</span>
         <span class="hero-title-line1">Alabama</span>
         <span class="hero-title-line2">State Championship</span>
       </h1>
@@ -533,29 +552,46 @@
       <div class="section-tag">Sponsors</div>
       <h2 class="section-title">Our Generous<br/><em>Sponsors</em></h2>
       <p class="sponsors-intro">This match would not be possible without the generous support of our sponsors. Thank you for making the 2026 Alabama State Championship a reality.</p>
+
+      <!-- Title Sponsors -->
+      <div class="sponsors-tier">
+        <h3 class="tier-label title-tier-label">Title Sponsors</h3>
+        <div class="sponsors-grid title-sponsors-grid">
+          <div class="sponsor-card sponsor-title">
+            <div class="sponsor-title-badge">Title Sponsor</div>
+            <img src="img/KimberLogo_Black.png" alt="Kimber" class="sponsor-logo-img" />
+          </div>
+          <div class="sponsor-card sponsor-title sponsor-presented">
+            <div class="sponsor-title-badge presented-badge">Presented By</div>
+            <!-- Replace with: <img src="img/belt-logo.png" alt="BELT" class="sponsor-logo-img"> -->
+            <div class="sponsor-placeholder sponsor-name-lg">BELT</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Gold Sponsors -->
       <div class="sponsors-tier">
         <h3 class="tier-label gold">Gold Sponsors</h3>
         <div class="sponsors-grid gold-tier">
           <div class="sponsor-card gold">
-            <div class="sponsor-placeholder">Sponsor Logo</div>
+            <!-- Drop img/pov-nutrition-logo.png in when ready -->
+            <div class="sponsor-placeholder">POV Nutrition</div>
           </div>
-          <div class="sponsor-card gold">
-            <div class="sponsor-placeholder">Sponsor Logo</div>
-          </div>
-          <div class="sponsor-card gold">
-            <div class="sponsor-placeholder">Sponsor Logo</div>
-          </div>
+          <div class="sponsor-card gold"><div class="sponsor-placeholder">Gold Sponsor</div></div>
+          <div class="sponsor-card gold"><div class="sponsor-placeholder">Gold Sponsor</div></div>
         </div>
       </div>
+
+      <!-- Silver Sponsors -->
       <div class="sponsors-tier">
-        <h3 class="tier-label silver">Supporting Sponsors</h3>
+        <h3 class="tier-label silver">Silver Sponsors</h3>
         <div class="sponsors-grid">
-          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
-          <div class="sponsor-card"><div class="sponsor-placeholder">Sponsor</div></div>
+          <div class="sponsor-card">
+            <img src="img/Springer Precision.jpg" alt="Springer Precision" class="sponsor-logo-img sponsor-logo-light" />
+          </div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Silver Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Silver Sponsor</div></div>
+          <div class="sponsor-card"><div class="sponsor-placeholder">Silver Sponsor</div></div>
         </div>
       </div>
     </div>
@@ -613,8 +649,8 @@
   <footer id="footer">
     <div class="footer-inner">
       <div class="footer-brand">
-        <div class="footer-logo">2026 USPSA<br/>Alabama State Championship</div>
-        <div class="footer-presented">Presented by the Alabama USPSA Section &amp; BELT</div>
+        <img src="img/fwalabamasection/Logo Linear_W.png" alt="Alabama USPSA Section" class="footer-section-logo" />
+        <div class="footer-presented">The Kimber 2026 Alabama State Championship<br/>Presented by BELT</div>
       </div>
       <div class="footer-links">
         <a href="#welcome">Welcome</a>
