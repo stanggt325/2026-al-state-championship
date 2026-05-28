@@ -598,16 +598,29 @@ address { font-style: normal; }
   position: absolute;
   top: .75rem;
   right: .75rem;
-  width: 86px;
-  height: 52px;
+  width: 130px;
+  height: 78px;
   object-fit: contain;
-  opacity: .11;
+  opacity: .13;
   mix-blend-mode: screen;
   filter: grayscale(1) brightness(2.5);
   pointer-events: none;
   transition: opacity var(--transition);
 }
-.stage-card:hover .stage-sponsor-bg { opacity: .22; }
+.stage-card:hover .stage-sponsor-bg { opacity: .26; }
+/* Stages that need a larger watermark */
+.stage-card[data-stage="1"]  .stage-sponsor-bg,
+.stage-card[data-stage="2"]  .stage-sponsor-bg,
+.stage-card[data-stage="10"] .stage-sponsor-bg {
+  width: 175px;
+  height: 105px;
+}
+/* White-background logos: invert so white→black (invisible with screen blend) */
+.stage-card[data-stage="6"] .stage-sponsor-bg,
+.stage-card[data-stage="7"] .stage-sponsor-bg,
+.stage-card[data-stage="8"] .stage-sponsor-bg {
+  filter: invert(1) grayscale(1) brightness(3);
+}
 .stage-sponsor-credit {
   font-family: 'Oswald', sans-serif;
   font-size: .68rem;
