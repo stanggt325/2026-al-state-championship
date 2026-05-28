@@ -608,17 +608,17 @@ address { font-style: normal; }
   transition: opacity var(--transition);
 }
 .stage-card:hover .stage-sponsor-bg { opacity: .26; }
-/* Stage 1: larger, flush to top edge */
+/* Stage 1: larger, pulled up into the corner */
 .stage-card[data-stage="1"] .stage-sponsor-bg {
   width: 175px;
   height: 105px;
-  top: 0;
+  top: -1.5rem;
 }
-/* Stage 2: 25% smaller than the large size, shifted up by half its height */
+/* Stage 2: 25% smaller, slight upward nudge only */
 .stage-card[data-stage="2"] .stage-sponsor-bg {
   width: 131px;
   height: 79px;
-  top: calc(.75rem - 40px);
+  top: calc(.75rem - 18px);
 }
 /* Stage 10: larger, flush to right edge */
 .stage-card[data-stage="10"] .stage-sponsor-bg {
@@ -627,8 +627,7 @@ address { font-style: normal; }
   right: 0;
 }
 /* White-background logos: invert so bg → black (disappears with screen blend) */
-.stage-card[data-stage="7"] .stage-sponsor-bg,
-.stage-card[data-stage="9"] .stage-sponsor-bg {
+.stage-card[data-stage="7"] .stage-sponsor-bg {
   filter: invert(1) grayscale(1) brightness(3);
 }
 /* Dark-background JPEG: lower brightness so bg stays close to card color */
