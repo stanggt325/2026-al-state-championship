@@ -1115,16 +1115,18 @@ td.sq {
   gap: 3rem;
   align-items: start;
 }
+.footer-logo-wrap {
+  display: inline-block;
+  background: #fff;
+  border-radius: 8px;
+  padding: .5rem 1rem;
+  margin-bottom: .75rem;
+}
 .footer-match-logo {
-  height: 48px;
+  height: 192px;
   width: auto;
   object-fit: contain;
-  margin-bottom: .6rem;
   display: block;
-  border-radius: 4px;
-  /* White-bg logo: multiply makes white disappear on dark footer */
-  mix-blend-mode: multiply;
-  opacity: .85;
 }
 .footer-presented {
   font-size: .78rem;
@@ -1153,6 +1155,14 @@ td.sq {
   margin-bottom: .4rem;
 }
 .footer-legal p:last-child { margin-bottom: 0; }
+.footer-copyright {
+  border-top: 1px solid var(--border);
+  padding: 1.1rem 2rem;
+  text-align: center;
+  font-size: .72rem;
+  color: var(--text-muted);
+  letter-spacing: .08em;
+}
 
 /* ─── ANIMATIONS ─── */
 @keyframes fadeUp {
