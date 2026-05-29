@@ -184,6 +184,50 @@ document.querySelectorAll('.squad-tab').forEach(tab => {
   });
 });
 
+/* ─── PDF MODAL ─── */
+(function initPdfModal() {
+  const modal      = document.getElementById('pdf-modal');
+  const backdrop   = modal.querySelector('.pdf-modal-backdrop');
+  const closeBtn   = document.getElementById('pdf-modal-close');
+  const iframe     = document.getElementById('pdf-iframe');
+  const titleEl    = document.getElementById('pdf-modal-title');
+  const downloadBtn = document.getElementById('pdf-download-btn');
+  const newTabBtn  = document.getElementById('pdf-new-tab-btn');
+
+  function openModal(src, title) {
+    titleEl.textContent = title;
+    iframe.src = src;
+    downloadBtn.href = src;
+    downloadBtn.setAttribute('download', title + '.pdf');
+    newTabBtn.href = src;
+    modal.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    modal.classList.remove('open');
+    iframe.src = '';
+    document.body.style.overflow = '';
+  }
+
+  // Wire up stage cards
+  document.querySelectorAll('.stage-card[data-pdf]').forEach(card => {
+    // Add "View Stage Diagram" hint
+    const hint = document.createElement('div');
+    hint.className = 'stage-pdf-hint';
+    hint.textContent = '📄 View Stage Diagram';
+    card.querySelector('.stage-body').appendChild(hint);
+
+    card.addEventListener('click', () => openModal(card.dataset.pdf, card.dataset.pdfTitle));
+  });
+
+  closeBtn.addEventListener('click', closeModal);
+  backdrop.addEventListener('click', closeModal);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape' && modal.classList.contains('open')) closeModal();
+  });
+})();
+
 /* ─── ACTIVE NAV LINK ON SCROLL ─── */
 const sections = document.querySelectorAll('section[id]');
 const navAnchors = document.querySelectorAll('.nav-links a');
