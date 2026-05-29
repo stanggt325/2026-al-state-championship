@@ -109,23 +109,23 @@ document.querySelectorAll(
 (function renderSponsors() {
 
   const goldSponsors = [
-    { img: 'img/gold/Hunters-HD-Gold-Logo-2020_HD-GOLD-Tagline-300x128.png', name: 'Hunters HD Gold'     },
-    { img: 'img/gold/pov-nutrition-logo.png',                                 name: 'POV Nutrition'       },
-    { img: 'img/gold/shooters-connection-logo.png',                           name: "Shooter's Connection" },
+    { img: 'img/gold/Hunters-HD-Gold-Logo-2020_HD-GOLD-Tagline-300x128.png', name: 'Hunters HD Gold',     url: 'https://huntershdgold.com'              },
+    { img: 'img/gold/pov-nutrition-logo.png',                                 name: 'POV Nutrition',       url: 'https://pov-nutrition.com'              },
+    { img: 'img/gold/shooters-connection-logo.png',                           name: "Shooter's Connection", url: 'https://www.shootersconnectionstore.com' },
   ];
 
   const silverSponsors = [
-    { img: 'img/silver/anderson-logo.png',          name: 'Anderson Manufacturing' },
-    { img: 'img/silver/holosun-logo.png',           name: 'Holosun'                },
-    { img: 'img/silver/lok-grips.png',              name: 'LOK Grips'              },
-    { img: 'img/silver/outdoor-dynamics-logo.png',  name: 'Outdoor Dynamics'       },
-    { img: 'img/silver/springer-precision-logo.jpg',name: 'Springer Precision'     },
-    { img: 'img/silver/vortex-logo.svg',            name: 'Vortex Optics'          },
+    { img: 'img/silver/anderson-logo.png',          name: 'Anderson Manufacturing', url: 'https://www.andersonshooting.com'     },
+    { img: 'img/silver/holosun-logo.png',           name: 'Holosun',                url: 'https://www.holosun.com'              },
+    { img: 'img/silver/lok-grips.png',              name: 'LOK Grips',              url: 'https://www.lokgrips.com'             },
+    { img: 'img/silver/outdoor-dynamics-logo.png',  name: 'Outdoor Dynamics',       url: 'https://www.outdoordynamics.net'      },
+    { img: 'img/silver/springer-precision-logo.jpg',name: 'Springer Precision',     url: 'https://shop.springerprecision.com'   },
+    { img: 'img/silver/vortex-logo.svg',            name: 'Vortex Optics',          url: 'https://www.vortexoptics.com'         },
   ];
 
   const divisionSponsors = [
-    { img: 'img/Division/c-more-logo.png',  name: 'C-More Systems', division: 'Carry Optics' },
-    { img: 'img/Division/zeroed-ammo.png',  name: 'Zeroed Ammo',    division: 'Open'          },
+    { img: 'img/Division/c-more-logo.png', name: 'C-More Systems', division: 'Carry Optics', url: 'https://www.cmore.com'      },
+    { img: 'img/Division/zeroed-ammo.png', name: 'Zeroed Ammo',    division: 'Open',          url: 'https://zeroedammo.com', xl: true },
   ];
 
   function shuffle(arr) {
@@ -138,8 +138,17 @@ document.querySelectorAll(
   }
 
   function buildCard(sponsor, extraClass) {
-    const card = document.createElement('div');
+    const tag = sponsor.url ? 'a' : 'div';
+    const card = document.createElement(tag);
     card.className = `sponsor-card${extraClass ? ' ' + extraClass : ''} reveal`;
+    // Slug class for per-sponsor CSS targeting (e.g. sponsor-zeroed-ammo)
+    const slug = sponsor.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+    card.classList.add('sponsor-' + slug);
+    if (sponsor.url) {
+      card.href   = sponsor.url;
+      card.target = '_blank';
+      card.rel    = 'noopener';
+    }
     if (sponsor.division) {
       const badge = document.createElement('div');
       badge.className = 'sponsor-division-badge';
@@ -148,10 +157,10 @@ document.querySelectorAll(
     }
     if (sponsor.img) {
       const img = document.createElement('img');
-      img.src     = sponsor.img;
-      img.alt     = sponsor.name;
-      img.className = 'sponsor-logo-img';
-      img.loading = 'lazy';
+      img.src       = sponsor.img;
+      img.alt       = sponsor.name;
+      img.className = 'sponsor-logo-img' + (sponsor.xl ? ' sponsor-logo-xl' : '');
+      img.loading   = 'lazy';
       card.appendChild(img);
     } else {
       const ph = document.createElement('div');

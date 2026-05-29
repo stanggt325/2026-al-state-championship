@@ -1038,6 +1038,12 @@ td.sq {
   border-radius: 3px;
 }
 .sponsor-card:hover { border-color: rgba(201,168,76,.35); background: rgba(201,168,76,.04); }
+a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
+/* Tier-specific logo sizing — fill the box proportionally */
+.sponsor-card.sponsor-title .sponsor-logo-img { max-height: 90px;  max-width: 78%; }
+.sponsor-card.gold           .sponsor-logo-img { max-height: 80px;  max-width: 85%; }
+/* Silver/Division inherit the 64px default */
+.sponsor-logo-xl { max-height: 120px !important; max-width: 92%; }
 .sponsor-card.gold {
   min-width: 220px;
   max-width: 360px;
