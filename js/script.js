@@ -212,7 +212,17 @@ document.querySelectorAll('.squad-tab').forEach(tab => {
   const downloadBtn = document.getElementById('pdf-download-btn');
   const newTabBtn  = document.getElementById('pdf-new-tab-btn');
 
+  // iOS Safari and most mobile browsers can't render PDFs in iframes —
+  // open in the native viewer (new tab) instead.
+  const isMobilePDF = /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) || // iPadOS 13+
+    (window.innerWidth <= 768 && 'ontouchstart' in window);
+
   function openModal(src, title) {
+    if (isMobilePDF) {
+      window.open(src, '_blank', 'noopener');
+      return;
+    }
     titleEl.textContent = title;
     iframe.src = src;
     downloadBtn.href = src;
