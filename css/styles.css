@@ -947,6 +947,7 @@ td.sq {
 .tier-label.title-tier-label { color: var(--white); font-size: .8rem; }
 .tier-label.gold  { color: var(--gold-lt); }
 .tier-label.silver { color: #A0A0B0; }
+.tier-label.division { color: var(--crimson-lt); }
 
 /* Title sponsor cards */
 .title-sponsors-grid {
@@ -1019,6 +1020,22 @@ td.sq {
   background: rgba(255,255,255,.025);
   transition: border-color var(--transition), background var(--transition);
   cursor: default;
+  position: relative;
+}
+.sponsor-division-badge {
+  position: absolute;
+  top: .45rem;
+  left: .55rem;
+  font-family: 'Oswald', sans-serif;
+  font-size: .58rem;
+  font-weight: 600;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: var(--crimson-lt);
+  background: rgba(220,38,38,.12);
+  border: 1px solid rgba(220,38,38,.28);
+  padding: .12rem .45rem;
+  border-radius: 3px;
 }
 .sponsor-card:hover { border-color: rgba(201,168,76,.35); background: rgba(201,168,76,.04); }
 .sponsor-card.gold {

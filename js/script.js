@@ -109,21 +109,24 @@ document.querySelectorAll(
 (function renderSponsors() {
 
   const goldSponsors = [
-    { img: 'img/gold/anderson-logo.png',            name: 'Anderson Manufacturing' },
-    { img: 'img/gold/c-more-logo.png',              name: 'C-More Systems'         },
-    { img: 'img/gold/holosun-logo.png',             name: 'Holosun'                },
-    { img: 'img/gold/lok-grips.png',                name: 'LOK Grips'              },
-    { img: 'img/gold/outdoor-dynamics-logo.png',    name: 'Outdoor Dynamics'       },
-    { img: 'img/gold/pov-nutrition-logo.png',        name: 'POV Nutrition'          },
-    { img: 'img/gold/shooters-connection-logo.png', name: "Shooter's Connection"   },
-    { img: 'img/gold/springer-precision-logo.jpg',  name: 'Springer Precision'     },
-    { img: 'img/gold/vortex-logo.svg',              name: 'Vortex Optics'          },
-    { img: 'img/gold/zeroed-ammo.png',              name: 'Zeroed Ammo'            },
+    { img: 'img/gold/Hunters-HD-Gold-Logo-2020_HD-GOLD-Tagline-300x128.png', name: 'Hunters HD Gold'     },
+    { img: 'img/gold/pov-nutrition-logo.png',                                 name: 'POV Nutrition'       },
+    { img: 'img/gold/shooters-connection-logo.png',                           name: "Shooter's Connection" },
   ];
 
-  // Add silver sponsor objects here when logos are available:
-  // { img: 'img/silver/sponsor-logo.png', name: 'Sponsor Name' }
-  const silverSponsors = [];
+  const silverSponsors = [
+    { img: 'img/silver/anderson-logo.png',          name: 'Anderson Manufacturing' },
+    { img: 'img/silver/holosun-logo.png',           name: 'Holosun'                },
+    { img: 'img/silver/lok-grips.png',              name: 'LOK Grips'              },
+    { img: 'img/silver/outdoor-dynamics-logo.png',  name: 'Outdoor Dynamics'       },
+    { img: 'img/silver/springer-precision-logo.jpg',name: 'Springer Precision'     },
+    { img: 'img/silver/vortex-logo.svg',            name: 'Vortex Optics'          },
+  ];
+
+  const divisionSponsors = [
+    { img: 'img/Division/c-more-logo.png',  name: 'C-More Systems', division: 'Carry Optics' },
+    { img: 'img/Division/zeroed-ammo.png',  name: 'Zeroed Ammo',    division: 'Open'          },
+  ];
 
   function shuffle(arr) {
     const a = [...arr];
@@ -137,10 +140,16 @@ document.querySelectorAll(
   function buildCard(sponsor, extraClass) {
     const card = document.createElement('div');
     card.className = `sponsor-card${extraClass ? ' ' + extraClass : ''} reveal`;
+    if (sponsor.division) {
+      const badge = document.createElement('div');
+      badge.className = 'sponsor-division-badge';
+      badge.textContent = sponsor.division;
+      card.appendChild(badge);
+    }
     if (sponsor.img) {
       const img = document.createElement('img');
-      img.src   = sponsor.img;
-      img.alt   = sponsor.name;
+      img.src     = sponsor.img;
+      img.alt     = sponsor.name;
       img.className = 'sponsor-logo-img';
       img.loading = 'lazy';
       card.appendChild(img);
@@ -163,14 +172,14 @@ document.querySelectorAll(
     shuffle(sponsors).forEach(s => {
       const card = buildCard(s, cardClass);
       container.appendChild(card);
-      // Wire into scroll-reveal after DOM insertion
       card.classList.add('reveal');
       revealObserver.observe(card);
     });
   }
 
-  populateGrid(goldSponsors,   'gold-sponsors-grid',   'gold');
-  populateGrid(silverSponsors, 'silver-sponsors-grid', '');
+  populateGrid(goldSponsors,     'gold-sponsors-grid',     'gold');
+  populateGrid(silverSponsors,   'silver-sponsors-grid',   '');
+  populateGrid(divisionSponsors, 'division-sponsors-grid', 'division');
 })();
 
 /* ─── SQUAD MATRIX TABS ─── */
