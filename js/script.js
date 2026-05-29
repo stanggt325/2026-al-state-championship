@@ -214,9 +214,10 @@ document.querySelectorAll('.squad-tab').forEach(tab => {
 
   // iOS Safari and most mobile browsers can't render PDFs in iframes —
   // open in the native viewer (new tab) instead.
-  const isMobilePDF = /iPad|iPhone|iPod/i.test(navigator.userAgent) ||
-    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1) || // iPadOS 13+
-    (window.innerWidth <= 768 && 'ontouchstart' in window);
+  // iOS, Android, and iPadOS 13+ all struggle with PDFs in iframes —
+  // send them straight to the native viewer.
+  const isMobilePDF = /iPad|iPhone|iPod|Android/i.test(navigator.userAgent) ||
+    (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1); // iPadOS 13+
 
   function openModal(src, title) {
     if (isMobilePDF) {
