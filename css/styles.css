@@ -950,8 +950,23 @@ td.sq {
 .tier-label.gold  { color: var(--gold-lt); }
 .tier-label.silver { color: #A0A0B0; }
 .tier-label.division { color: var(--crimson-lt); }
-.tier-label.photography-label { color: var(--text-muted); }
-.photography-tier { text-align: center; margin-top: 1rem; margin-bottom: 0; }
+.photography-tier {
+  text-align: center;
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+}
+.photography-label {
+  font-family: 'Inter', sans-serif;
+  font-size: .8rem;
+  font-weight: 400;
+  font-style: italic;
+  letter-spacing: .12em;
+  text-transform: none;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
 .photography-link { display: inline-block; }
 .photography-img {
   width: 420px;
