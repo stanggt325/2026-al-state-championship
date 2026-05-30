@@ -1050,7 +1050,7 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
 #silver-sponsors-grid .sponsor-card { flex: 0 1 220px; }
 /* White-background sponsor logos — invert so bg disappears with screen blend */
 .sponsor-range-panda { background: #fff; border-color: rgba(255,255,255,.15); }
-.sponsor-range-panda .sponsor-logo-img { mix-blend-mode: normal; filter: none; }
+.sponsor-range-panda .sponsor-logo-img { mix-blend-mode: normal; filter: none; max-height: 96px; }
 .sponsor-card.gold {
   min-width: 220px;
   max-width: 360px;
