@@ -36,9 +36,10 @@ git push origin main       # GitHub Pages deploys automatically on push
 ---
 
 ## Section Order (index.html)
+Order is consistent across page sections, top nav, and footer links:
 1. `#hero`
 2. `#welcome`
-3. `#sponsors` ← moved above briefing
+3. `#sponsors`
 4. `#briefing`
 5. `#stages`
 6. `#schedule`
