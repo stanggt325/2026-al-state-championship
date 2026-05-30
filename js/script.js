@@ -83,6 +83,25 @@ document.querySelectorAll(
   revealObserver.observe(el);
 });
 
+/* ─── SECTION HEADER REVEAL ─── */
+const headingObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (!e.isIntersecting) return;
+    const tag     = e.target.querySelector('.section-tag');
+    const title   = e.target.querySelector('.section-title');
+    if (tag)   setTimeout(() => tag.classList.add('visible'),   0);
+    if (title) setTimeout(() => title.classList.add('visible'), 120);
+    headingObserver.unobserve(e.target);
+  });
+}, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+document.querySelectorAll('.section-tag, .section-title').forEach(el => {
+  const cls = el.classList.contains('section-tag') ? 'reveal-tag' : 'reveal-heading';
+  el.classList.add(cls);
+});
+
+document.querySelectorAll('.section').forEach(s => headingObserver.observe(s));
+
 /* ─── FLOATING PARTICLES ─── */
 (function spawnParticles() {
   const container = document.getElementById('particles');

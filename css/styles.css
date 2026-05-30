@@ -1418,6 +1418,22 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
 }
 .reveal.visible { opacity: 1; transform: translateY(0); }
 
+/* Section tag eyebrow — slides in from left */
+.reveal-tag {
+  opacity: 0;
+  transform: translateX(-20px);
+  transition: opacity .5s cubic-bezier(.4,0,.2,1), transform .5s cubic-bezier(.4,0,.2,1);
+}
+.reveal-tag.visible { opacity: 1; transform: translateX(0); }
+
+/* Section title — rises from further below, slower */
+.reveal-heading {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1);
+}
+.reveal-heading.visible { opacity: 1; transform: translateY(0); }
+
 /* ─── RESPONSIVE ─── */
 @media (max-width: 1024px) {
   .welcome-grid { grid-template-columns: 1fr; }
