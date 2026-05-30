@@ -408,7 +408,7 @@ body {
 }
 
 /* ─── SHARED SECTION STYLES ─── */
-.section { padding: 7rem 0; }
+.section { padding: 5rem 0; }
 .section-dark { background: var(--dark-2); }
 .section-mid  { background: var(--mid); }
 .section-inner {
@@ -951,7 +951,7 @@ td.sq {
 .tier-label.silver { color: #A0A0B0; }
 .tier-label.division { color: var(--crimson-lt); }
 .tier-label.photography-label { color: var(--text-muted); }
-.photography-tier { text-align: center; margin-top: 1rem; }
+.photography-tier { text-align: center; margin-top: 1rem; margin-bottom: 0; }
 .photography-link { display: inline-block; }
 .photography-img {
   width: 420px;
@@ -1396,7 +1396,7 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
   .squad-tab { font-size: .72rem; padding: .5rem 1rem; }
 }
 @media (max-width: 480px) {
-  .section { padding: 5rem 0; }
+  .section { padding: 3.5rem 0; }
   .hero-stats { flex-wrap: wrap; }
   .hero-divider { display: none; }
   .hero-countdown { flex-wrap: wrap; }
