@@ -1046,6 +1046,8 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
 .sponsor-card.gold           .sponsor-logo-img { max-height: 80px;  max-width: 85%; }
 /* Silver/Division inherit the 64px default */
 .sponsor-logo-xl { max-height: 120px !important; max-width: 92%; }
+/* White-background sponsor logos — invert so bg disappears with screen blend */
+.sponsor-range-panda .sponsor-logo-img { filter: invert(1) grayscale(1) brightness(1.8); }
 .sponsor-card.gold {
   min-width: 220px;
   max-width: 360px;

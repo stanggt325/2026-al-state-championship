@@ -112,6 +112,7 @@ document.querySelectorAll(
     { img: 'img/gold/Hunters-HD-Gold-Logo-2020_HD-GOLD-Tagline-300x128.png', name: 'Hunters HD Gold',     url: 'https://huntershdgold.com'              },
     { img: 'img/gold/pov-nutrition-logo.png',                                 name: 'POV Nutrition',       url: 'https://pov-nutrition.com'              },
     { img: 'img/gold/shooters-connection-logo.png',                           name: "Shooter's Connection", url: 'https://www.shootersconnectionstore.com' },
+    { img: 'img/gold/socn-logo.svg',                                          name: 'Spec Ops Charity',    url: 'https://specopscharity.com/'            },
   ];
 
   const silverSponsors = [
@@ -119,6 +120,7 @@ document.querySelectorAll(
     { img: 'img/silver/holosun-logo.png',           name: 'Holosun',                url: 'https://www.holosun.com'              },
     { img: 'img/silver/lok-grips.png',              name: 'LOK Grips',              url: 'https://www.lokgrips.com'             },
     { img: 'img/silver/outdoor-dynamics-logo.png',  name: 'Outdoor Dynamics',       url: 'https://www.outdoordynamics.net'      },
+    { img: 'img/silver/range-panda-logo.jpg',       name: 'Range Panda',            url: 'https://rangepanda.com'               },
     { img: 'img/silver/springer-precision-logo.jpg',name: 'Springer Precision',     url: 'https://shop.springerprecision.com'   },
     { img: 'img/silver/vortex-logo.svg',            name: 'Vortex Optics',          url: 'https://www.vortexoptics.com'         },
   ];
