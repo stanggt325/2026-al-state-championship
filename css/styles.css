@@ -925,6 +925,40 @@ td.sq {
   padding: .65rem !important;
 }
 
+/* ─── BAY MAP ─── */
+.bay-map-outer {
+  margin-top: 3rem;
+  text-align: center;
+}
+.bay-map-hint {
+  font-family: 'Inter', sans-serif;
+  font-size: .85rem;
+  color: var(--text-muted);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+#bay-map-wrap {
+  max-width: 500px;
+  margin: 0 auto;
+}
+#bay-map-svg {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+.bay-group { cursor: pointer; }
+.bay-group .bay-body   { transition: fill .2s; }
+.bay-group .bay-accent { transition: fill .2s; }
+.bay-group:hover .bay-body { fill: #222228 !important; }
+.sq.sq-selected {
+  box-shadow: 0 0 0 2px var(--gold-lt);
+  outline: none;
+}
+td.sq.sq-selected {
+  box-shadow: inset 0 0 0 2px var(--gold-lt);
+}
+
 /* ─── SPONSORS ─── */
 .sponsors-intro {
   color: var(--off-white);
