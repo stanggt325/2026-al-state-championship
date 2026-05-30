@@ -950,6 +950,17 @@ td.sq {
 .tier-label.gold  { color: var(--gold-lt); }
 .tier-label.silver { color: #A0A0B0; }
 .tier-label.division { color: var(--crimson-lt); }
+.tier-label.photography-label { color: var(--text-muted); }
+.photography-tier { text-align: center; margin-top: 1rem; }
+.photography-link { display: inline-block; }
+.photography-img {
+  max-height: 120px;
+  width: auto;
+  border-radius: 8px;
+  opacity: 0.9;
+  transition: opacity .2s;
+}
+.photography-link:hover .photography-img { opacity: 1; }
 
 /* Title sponsor cards */
 .title-sponsors-grid {
