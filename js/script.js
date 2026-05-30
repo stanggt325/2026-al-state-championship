@@ -113,6 +113,7 @@ document.querySelectorAll(
     { img: 'img/gold/pov-nutrition-logo.png',                                 name: 'POV Nutrition',       url: 'https://pov-nutrition.com'              },
     { img: 'img/gold/shooters-connection-logo.png',                           name: "Shooter's Connection", url: 'https://www.shootersconnectionstore.com' },
     { img: 'img/gold/socn-logo.svg',                                          name: 'Spec Ops Charity',    url: 'https://specopscharity.com/'            },
+    { img: 'img/gold/zero_sports_header_0d4c7fea-c93a-4d90-9230-abceba74a3ca_245x@2x.webp', name: 'Zero Sports', url: 'https://zerosportsdepot.com/' },
   ];
 
   const silverSponsors = [
