@@ -76,7 +76,8 @@ Order is consistent across page sections, top nav, and footer links:
     │   ├── pov-nutrition-logo.png      # Transparent PNG (correct file)
     │   ├── pov-nutrition-logo.png.jpg  # OLD file — ignore
     │   ├── shooters-connection-logo.png
-    │   ├── socn-logo.svg               # Spec Ops Charity Network
+    │   ├── socn-logo.svg               # Spec Ops Charity Network (used)
+    │   ├── socn-stacked.svg            # Alternate SOCN logo — unused, ignore
     │   ├── Springer Precision.jpg      # OLD source — ignore
     │   └── springer2.jpg               # Source banner used to create cropped version
     ├── silver/

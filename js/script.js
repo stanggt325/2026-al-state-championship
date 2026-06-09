@@ -493,6 +493,20 @@ document.querySelectorAll('.squad-tab').forEach(tab => {
     card.addEventListener('click', () => openModal(card.dataset.pdf, card.dataset.pdfTitle));
   });
 
+  // Wire up "View All Stages" button — same mobile logic as individual PDFs
+  const allStagesBtn = document.querySelector('[data-all-stages]');
+  if (allStagesBtn) {
+    allStagesBtn.addEventListener('click', e => {
+      e.preventDefault();
+      const src = allStagesBtn.getAttribute('href');
+      if (isMobilePDF) {
+        window.open(src, '_blank', 'noopener');
+      } else {
+        window.open(src, '_blank', 'noopener');
+      }
+    });
+  }
+
   closeBtn.addEventListener('click', closeModal);
   backdrop.addEventListener('click', closeModal);
   document.addEventListener('keydown', e => {

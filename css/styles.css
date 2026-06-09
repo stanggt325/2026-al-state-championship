@@ -1395,6 +1395,35 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
   transition: opacity var(--transition);
 }
 .stage-card:hover .stage-pdf-hint { opacity: 1; }
+
+/* View All Stages button */
+.view-all-stages-wrap {
+  text-align: center;
+  margin: 1.5rem 0 2.5rem;
+}
+.view-all-stages-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+  padding: .7rem 1.75rem;
+  background: transparent;
+  border: 1.5px solid var(--gold);
+  border-radius: 4px;
+  color: var(--gold);
+  font-family: 'Oswald', sans-serif;
+  font-size: .95rem;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background var(--transition), color var(--transition);
+}
+.view-all-stages-btn::before { content: '📄'; font-size: 1em; }
+.view-all-stages-btn:hover {
+  background: var(--gold);
+  color: var(--dark);
+}
+
 @media (max-width: 600px) {
   .pdf-modal-panel { width: 100vw; height: 100dvh; border-radius: 0; border: none; }
   .pdf-tab-btn { display: none; }
