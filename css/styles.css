@@ -427,6 +427,7 @@ body {
 .hero-cta-matchbook {
   opacity: 0;
   animation: fadeUp .8s 1.3s forwards;
+  margin-top: .75rem;
 }
 .hero-scroll-hint {
   position: absolute;
