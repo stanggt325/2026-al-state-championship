@@ -352,25 +352,33 @@ OG and Twitter card meta tags in `<head>`:
 
 ---
 
-## Watch Live Button (`index.html`, `js/script.js`, `css/styles.css`)
+## Watch Live Block (`index.html`, `js/script.js`, `css/styles.css`)
 
-A livestream block sits in the hero between the stats and the "View Match Book" CTA:
+A single-stream livestream block sits in the hero between the stats and the "View Match Book" CTA:
 
 ```html
 <div class="hero-live-block">
-  <a class="hero-live-card" href="RUMBLE_URL" ...>   <!-- thumbnail card -->
-  <a class="hero-cta hero-cta-live" href="RUMBLE_URL" ...>&#9654; Watch Live!</a>
+  <div class="hero-live-stream">
+    <div class="hero-live-stream-label">Hunter's HD Gold</div>
+    <a class="hero-live-card" href="RUMBLE_URL" target="_blank" ...>
+      <img class="hero-live-thumb" id="watchLiveThumb" ... />
+      <div class="hero-live-overlay"> ... </div>
+    </a>
+  </div>
 </div>
 <a href="#welcome" class="hero-cta hero-cta-matchbook">View Match Book</a>
 ```
 
-- **Current stream URL:** `https://rumble.com/v7b02ce-episode-289-friday-uspsa-alabama-state-section-championship-at-cmp-in-talla.html`
+- **Current streamer:** Hunter's HD Gold (on Rumble)
+- **Stream URL:** `https://rumble.com/v7b02ce-episode-289-friday-uspsa-alabama-state-section-championship-at-cmp-in-talla.html`
 - **Video ID:** `v7b02ce`
-- Both the thumbnail card and the button open the URL in a new tab (`target="_blank"`)
-- **Thumbnail:** fetched at runtime via Rumble's oEmbed API (`https://rumble.com/api/Media/oembed.json?url=...`) in `initWatchLive` IIFE — fades in with `.loaded` class once the image loads; overlay with crimson play-circle shows regardless (safe fallback if fetch fails)
-- **To update the stream URL:** change `url` in `initWatchLive` in `script.js` and the two `href` attributes on `.hero-live-card` and `.hero-cta-live` in `index.html`
-- **To remove after the match:** delete `.hero-live-block` from HTML, the `initWatchLive` IIFE from JS, and the `.hero-live-*` / `.hero-cta-live` / `.hero-cta-matchbook` CSS blocks
+- Clicking the card opens the URL in a new tab (`target="_blank"`)
+- **Thumbnail:** fetched at runtime via Rumble's oEmbed API (`https://rumble.com/api/Media/oembed.json?url=...`) in `initWatchLive` IIFE — fades in with `.loaded` class; crimson play-circle overlay shows regardless as a fallback
+- **To update the stream URL:** change `url` in `initWatchLive` in `script.js` and the `href` on `.hero-live-card` in `index.html`
+- **To add a second stream:** wrap the existing `.hero-live-stream` and a new one inside a `.hero-live-streams` flex row — CSS for `.hero-live-streams` and narrower card width (`min(300px, 42vw)`) will need to be restored
+- **To remove after the match:** delete `.hero-live-block` from HTML, the `initWatchLive` IIFE from JS, and the `.hero-live-*` / `.hero-cta-matchbook` CSS blocks
 - **Countdown timer removed** (June 2026) — the `initCountdown` IIFE, `.hero-countdown`, `.cd-block`, and `.cd-label` CSS are gone; do not re-add
+- **atveventlive.com (`AMTV Live`) — do not use** — investigated June 2026; site has no disclosed ownership, inconsistent branding across multiple domains (`allevent.live`, `now247.live`, `streamonnet.com`), and no legitimate web presence. Likely a scraper/aggregator that generates event pages to drive account sign-ups.
 
 ---
 
