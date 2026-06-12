@@ -14,30 +14,20 @@ navLinks.querySelectorAll('a').forEach(a => {
   a.addEventListener('click', () => navLinks.classList.remove('open'));
 });
 
-/* ─── COUNTDOWN TIMER ─── */
-(function initCountdown() {
-  const target = new Date('2026-06-11T09:00:00');
-  function update() {
-    const now  = Date.now();
-    const diff = target - now;
-    if (diff <= 0) {
-      document.getElementById('cd-days').textContent = 'LIVE';
-      document.getElementById('cd-hrs').textContent  = '🎯';
-      document.getElementById('cd-min').textContent  = '🎯';
-      document.getElementById('cd-sec').textContent  = '🎯';
-      return;
-    }
-    const d = Math.floor(diff / 86400000);
-    const h = Math.floor((diff % 86400000) / 3600000);
-    const m = Math.floor((diff % 3600000)  / 60000);
-    const s = Math.floor((diff % 60000)    / 1000);
-    document.getElementById('cd-days').textContent = String(d);
-    document.getElementById('cd-hrs').textContent  = String(h).padStart(2,'0');
-    document.getElementById('cd-min').textContent  = String(m).padStart(2,'0');
-    document.getElementById('cd-sec').textContent  = String(s).padStart(2,'0');
-  }
-  update();
-  setInterval(update, 1000);
+
+/* ─── WATCH LIVE THUMBNAIL ─── */
+(function initWatchLive() {
+  const url   = 'https://rumble.com/v7b02ce-episode-289-friday-uspsa-alabama-state-section-championship-at-cmp-in-talla.html';
+  const thumb = document.getElementById('watchLiveThumb');
+  fetch('https://rumble.com/api/Media/oembed.json?url=' + encodeURIComponent(url))
+    .then(r => r.json())
+    .then(data => {
+      if (data.thumbnail_url) {
+        thumb.onload = () => thumb.classList.add('loaded');
+        thumb.src = data.thumbnail_url;
+      }
+    })
+    .catch(() => {});
 })();
 
 /* ─── ANIMATED COUNTERS ─── */
