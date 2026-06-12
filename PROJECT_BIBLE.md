@@ -31,7 +31,7 @@ git push origin main       # GitHub Pages deploys automatically on push
 - GitHub Pages propagation is typically under 30 seconds
 
 ### Preview Server
-`.claude/launch.json` runs `bash -c "PATH=/opt/homebrew/bin:$PATH npx --yes serve -p 3456 ."` — required because the OneDrive path blocks Python's `http.server` from calling `os.getcwd()`. Node/npx is installed via Homebrew at `/opt/homebrew/bin/`.
+`.claude/launch.json` runs `npx --yes serve -p 3456 .` on Windows (Node.js at `C:\Program Files\nodejs\`). The original Mac config used `/bin/bash` + Homebrew path — that entry has been replaced with the Windows-compatible `runtimeExecutable: "npx"` form.
 
 ---
 
@@ -60,8 +60,9 @@ Order is consistent across page sections, top nav, and footer links:
 ├── .gitignore              # Ignores .claude/
 ├── doc/
 │   └── welcome.docx        # Source for Jim Palmer's welcome message
-├── pdf/                    # 10 stage PDFs (one per stage)
-│   └── Stage N - Name-Designer.pdf
+├── pdf/                    # 10 stage PDFs + combined all-stages PDF
+│   ├── Stage N - Name-Designer.pdf
+│   └── 2026-AL-State-Championship-All-Stages.pdf   # Combined 20-page PDF (all 10 stages in order)
 └── img/
     ├── Match Logo.png.png          # Match logo (footer + nav) — double extension is real filename
     ├── tps-logo-white.jpg          # TPS logo — browser tab favicon
@@ -229,6 +230,14 @@ Each stage card has:
 - PDF filenames have spaces and special chars — all URL-encoded in `data-pdf` attributes
 - Stage 2 PDF has a comma in the filename: `Stage%202%20-%20Grant-Jeremy%20Hughes%2C%20Original%20by%20John%20Taylor.pdf`
 
+### View All Stages Button
+- A **"View All Stages"** button sits between the Stages section heading and the stage cards grid
+- HTML: `<a class="view-all-stages-btn" href="pdf/2026-AL-State-Championship-All-Stages.pdf" data-all-stages>`
+- JS wires up `[data-all-stages]` using the same `isMobilePDF` logic → always `window.open(src, '_blank')`
+- CSS: `.view-all-stages-wrap` (centered) + `.view-all-stages-btn` (gold outlined, Oswald font, hover fills gold)
+- **To update the combined PDF:** run `node merge-pdfs.mjs` from the project root (requires `pdf-lib` in local `node_modules/` — already installed; `merge-pdfs.mjs`, `package.json`, `package-lock.json`, and `node_modules/` are gitignored/untracked). Then commit both the changed stage PDF and `pdf/2026-AL-State-Championship-All-Stages.pdf`.
+- **Cache gotcha:** browsers cache PDFs aggressively — hard refresh (`Ctrl+Shift+R`) won't clear a PDF open in its own tab. Use **Ctrl+Shift+Delete → Cached images and files → All time** or open in a private/incognito window to verify updates. Cloudflare cache purge is also required after pushing PDF changes.
+
 ---
 
 ## Squad Matrix
@@ -324,13 +333,12 @@ OG and Twitter card meta tags in `<head>`:
 | Location | CMP Talladega Marksmanship Park, Range 5, 4387 Turner Mill Rd W, Talladega AL 35160 |
 | Range open | 7:00 AM |
 | Range close | 6:00 PM |
-| Shooting start | 9:00 AM |
+| Match/stage walking start | 9:00 AM (Thursday: match begins, competitors can walk stages; Fri–Sun: competition begins) |
 | Stages | 10 (all Comstock) |
 | Min rounds | 272 |
 | Recommended | 350+ |
 | Competitors | 310 |
 | Format | Competitor-reset match |
-| Countdown target | `new Date('2026-06-11T09:00:00')` in script.js |
 
 ### Match Staff
 | Role | Name |
@@ -339,8 +347,30 @@ OG and Twitter card meta tags in `<head>`:
 | Range Master | Gary McConnell |
 | Co-Range Master | Ike Starns |
 | Co-Match Director & Stage Design | Jeremy Hughes |
-| Stats | Steve Fischer & Linda Poole |
+| Stats | Steve Fischer & Linda Pool |
 | Set-up Crew | Dedicated Volunteers |
+
+---
+
+## Watch Live Button (`index.html`, `js/script.js`, `css/styles.css`)
+
+A livestream block sits in the hero between the stats and the "View Match Book" CTA:
+
+```html
+<div class="hero-live-block">
+  <a class="hero-live-card" href="RUMBLE_URL" ...>   <!-- thumbnail card -->
+  <a class="hero-cta hero-cta-live" href="RUMBLE_URL" ...>&#9654; Watch Live!</a>
+</div>
+<a href="#welcome" class="hero-cta hero-cta-matchbook">View Match Book</a>
+```
+
+- **Current stream URL:** `https://rumble.com/v7b02ce-episode-289-friday-uspsa-alabama-state-section-championship-at-cmp-in-talla.html`
+- **Video ID:** `v7b02ce`
+- Both the thumbnail card and the button open the URL in a new tab (`target="_blank"`)
+- **Thumbnail:** fetched at runtime via Rumble's oEmbed API (`https://rumble.com/api/Media/oembed.json?url=...`) in `initWatchLive` IIFE — fades in with `.loaded` class once the image loads; overlay with crimson play-circle shows regardless (safe fallback if fetch fails)
+- **To update the stream URL:** change `url` in `initWatchLive` in `script.js` and the two `href` attributes on `.hero-live-card` and `.hero-cta-live` in `index.html`
+- **To remove after the match:** delete `.hero-live-block` from HTML, the `initWatchLive` IIFE from JS, and the `.hero-live-*` / `.hero-cta-live` / `.hero-cta-matchbook` CSS blocks
+- **Countdown timer removed** (June 2026) — the `initCountdown` IIFE, `.hero-countdown`, `.cd-block`, and `.cd-label` CSS are gone; do not re-add
 
 ---
 
@@ -355,10 +385,13 @@ OG and Twitter card meta tags in `<head>`:
 7. **Range Panda** — white card background, `mix-blend-mode: normal`, `filter: none`. Logo max-height: 96px. Any attempt to use invert or screen blend makes it look wrong.
 8. **Briefing cards have no emoji icons** — they were removed; do not re-add `.brief-icon` elements.
 9. **Bay map is pure SVG, no raster image** — `Bay Layout.png` is kept as a reference but the illustrated SVG replaces it on the page. If stage-to-bay assignments change, update the `bays` array in `initBayMap` in `script.js`.
+10. **PDF browser caching** — browsers cache PDFs opened in their own tab; `Ctrl+Shift+R` does not clear them. Use `Ctrl+Shift+Delete` (clear all cached files) or an incognito window to verify PDF updates. Always purge Cloudflare cache after pushing new PDFs.
+11. **Schedule — no Sunday Only block** — the Sunday-specific arbitration rows were removed as confusing to competitors. Thursday 9 AM reads "Match Begins (Competitors Can Walk Stages)"; Fri–Sun 9 AM reads "Competition Begins". Range opens at 7 AM all days; stage walking is not permitted until 9 AM.
 
 ---
 
 ## What's Not Done / Future Considerations
+- **Remove Watch Live block** after the match concludes (June 14, 2026) — see Watch Live section above for what to delete
 - Results/scores page after the match concludes (June 14, 2026)
 - Silver sponsor Outdoor Dynamics logo may need review (small/unclear at current size)
 - Stage sponsor watermarks for stages 6, 7, 8 were previously problematic — if logos are ever replaced, check the per-stage CSS filter overrides in `styles.css`
