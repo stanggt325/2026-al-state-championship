@@ -354,10 +354,30 @@ body {
   opacity: 0;
   animation: fadeUp .8s 1.15s forwards;
 }
+.hero-live-streams {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+.hero-live-stream {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .4rem;
+}
+.hero-live-stream-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: .75rem;
+  font-weight: 600;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  color: var(--gold);
+}
 .hero-live-card {
   position: relative;
   display: block;
-  width: min(480px, 90vw);
+  width: min(300px, 42vw);
   aspect-ratio: 16 / 9;
   border-radius: var(--radius);
   overflow: hidden;
@@ -388,14 +408,14 @@ body {
 }
 .hero-live-card:hover .hero-live-overlay { background: rgba(0,0,0,.55); }
 .hero-live-play {
-  width: 3.5rem;
-  height: 3.5rem;
+  width: 3rem;
+  height: 3rem;
   display: flex;
   align-items: center;
   justify-content: center;
   background: var(--crimson);
   border-radius: 50%;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--white);
   padding-left: .15em;
   transition: transform .2s, background .2s;
@@ -406,23 +426,11 @@ body {
 }
 .hero-live-badge {
   font-family: 'Oswald', sans-serif;
-  font-size: .7rem;
+  font-size: .65rem;
   font-weight: 600;
   letter-spacing: .2em;
   color: var(--white);
   text-transform: uppercase;
-}
-.hero-cta-live {
-  background: linear-gradient(135deg, var(--crimson-lt), var(--crimson));
-  color: var(--white);
-  box-shadow: 0 4px 24px rgba(155,28,28,.4);
-}
-.hero-cta-live:hover {
-  box-shadow: 0 8px 32px rgba(155,28,28,.6);
-}
-.hero-live-block .hero-cta-live {
-  opacity: 1;
-  animation: none;
 }
 .hero-cta-matchbook {
   opacity: 0;
