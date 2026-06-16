@@ -19,17 +19,6 @@ navLinks.querySelectorAll('a').forEach(a => {
 (function initAwardsTabs() {
   const tabs   = document.querySelectorAll('.awards-tab');
   const panels = document.querySelectorAll('.awards-panel');
-
-  function revealPanel(panel) {
-    panel.querySelectorAll('.reveal:not(.visible)').forEach((el, i) => {
-      setTimeout(() => el.classList.add('visible'), i * 60);
-    });
-  }
-
-  // Reveal the default active panel immediately on load
-  const defaultPanel = document.querySelector('.awards-panel.active');
-  if (defaultPanel) revealPanel(defaultPanel);
-
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
       tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
@@ -37,7 +26,7 @@ navLinks.querySelectorAll('a').forEach(a => {
       tab.classList.add('active');
       tab.setAttribute('aria-selected', 'true');
       const panel = document.getElementById('awards-panel-' + tab.dataset.div);
-      if (panel) { panel.classList.add('active'); revealPanel(panel); }
+      if (panel) panel.classList.add('active');
     });
   });
 })();
@@ -53,7 +42,7 @@ const revealObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
 document.querySelectorAll(
-  '.brief-card, .stage-card, .staff-list li, .schedule-table tbody tr, .sponsor-card, .dir-block, .awards-champion-card, .awards-class-block'
+  '.brief-card, .stage-card, .staff-list li, .schedule-table tbody tr, .sponsor-card, .dir-block'
 ).forEach(el => {
   el.classList.add('reveal');
   revealObserver.observe(el);
