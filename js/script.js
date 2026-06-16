@@ -15,46 +15,26 @@ navLinks.querySelectorAll('a').forEach(a => {
 });
 
 
-/* ─── WATCH LIVE THUMBNAIL ─── */
-(function initWatchLive() {
-  const url   = 'https://rumble.com/v7b02ce-episode-289-friday-uspsa-alabama-state-section-championship-at-cmp-in-talla.html';
-  const thumb = document.getElementById('watchLiveThumb');
-  fetch('https://rumble.com/api/Media/oembed.json?url=' + encodeURIComponent(url))
-    .then(r => r.json())
-    .then(data => {
-      if (data.thumbnail_url) {
-        thumb.onload = () => thumb.classList.add('loaded');
-        thumb.src = data.thumbnail_url;
+/* ─── AWARDS DIVISION TABS ─── */
+(function initAwardsTabs() {
+  const tabs   = document.querySelectorAll('.awards-tab');
+  const panels = document.querySelectorAll('.awards-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected', 'false'); });
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      tab.setAttribute('aria-selected', 'true');
+      const panel = document.getElementById('awards-panel-' + tab.dataset.div);
+      if (panel) {
+        panel.classList.add('active');
+        panel.querySelectorAll('.reveal:not(.visible)').forEach((el, i) => {
+          setTimeout(() => el.classList.add('visible'), i * 60);
+        });
       }
-    })
-    .catch(() => {});
-})();
-
-/* ─── ANIMATED COUNTERS ─── */
-function animateCounter(el) {
-  const target = parseInt(el.dataset.target, 10);
-  const duration = 1800;
-  const startTime = performance.now();
-  function step(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = 1 - Math.pow(1 - progress, 3);
-    el.textContent = Math.round(eased * target);
-    if (progress < 1) requestAnimationFrame(step);
-  }
-  requestAnimationFrame(step);
-}
-
-const counterObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      animateCounter(e.target);
-      counterObserver.unobserve(e.target);
-    }
+    });
   });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.stat-num[data-target]').forEach(el => counterObserver.observe(el));
+})();
 
 /* ─── SCROLL REVEAL ─── */
 const revealObserver = new IntersectionObserver((entries) => {
