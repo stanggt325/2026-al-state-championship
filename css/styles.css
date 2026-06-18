@@ -1677,23 +1677,19 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
 
 /* Category Champions subsection */
 .awards-categories {
-  margin-top: 3.5rem;
+  margin-top: 5rem;
+  padding-top: 4rem;
+  border-top: 1px solid var(--border);
 }
 .awards-categories-header {
-  margin-bottom: 1.75rem;
-}
-.awards-categories-rule {
-  width: 100%;
-  height: 1px;
-  background: linear-gradient(to right, var(--crimson), rgba(201,168,76,.4), transparent);
-  margin-bottom: 1.5rem;
+  margin-bottom: 3.5rem;
 }
 .awards-categories-title {
   font-family: 'Oswald', sans-serif;
-  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-size: clamp(2rem, 4.5vw, 3.2rem);
   font-weight: 700;
+  line-height: 1.1;
   color: var(--white);
-  letter-spacing: .04em;
 }
 .awards-categories-title em {
   font-style: normal;
