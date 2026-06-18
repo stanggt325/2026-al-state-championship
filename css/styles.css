@@ -1675,6 +1675,34 @@ a.sponsor-card { text-decoration: none; color: inherit; cursor: pointer; }
   font-weight: 500;
 }
 
+/* Category Champions subsection */
+.awards-categories {
+  margin-top: 3.5rem;
+}
+.awards-categories-header {
+  margin-bottom: 1.75rem;
+}
+.awards-categories-rule {
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, var(--crimson), rgba(201,168,76,.4), transparent);
+  margin-bottom: 1.5rem;
+}
+.awards-categories-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: clamp(1.4rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: .04em;
+}
+.awards-categories-title em {
+  font-style: normal;
+  color: var(--crimson-lt);
+}
+.awards-categories-grid {
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+}
+
 @media (max-width: 768px) {
   .awards-classes-grid { grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); }
   .awards-champ-badge { font-size: .6rem; letter-spacing: .25em; }
